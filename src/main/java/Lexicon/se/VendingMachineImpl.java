@@ -1,11 +1,9 @@
 package Lexicon.se;
 
-import Lexicon.se.model.Drink;
-import Lexicon.se.model.Food;
-import Lexicon.se.model.Product;
-import Lexicon.se.model.Snack;
 
-public abstract class VendingMachineImpl implements VendingMachine{
+import Lexicon.se.model.Product;
+
+public class VendingMachineImpl implements VendingMachine{
 
     int[] denominations;
     Product[] products;
