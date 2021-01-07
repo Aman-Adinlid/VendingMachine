@@ -1,9 +1,12 @@
-package Lexicon.se.model;
+package Lexicon.se;
 
-import Lexicon.se.VendingMachine;
+import Lexicon.se.model.Drink;
+import Lexicon.se.model.Food;
 import Lexicon.se.model.Product;
+import Lexicon.se.model.Snack;
 
-public abstract class VendingMachineImpl implements VendingMachine {
+public class VendingMachineImpl {
+
 
 
     int[] denominations = new int[]{1, 2, 5, 10, 20, 50, 100, 200, 500, 1000};
@@ -12,8 +15,8 @@ public abstract class VendingMachineImpl implements VendingMachine {
             new Food("Potato",50,200),
             new Snack("popCorn",100,50),
     };
-       private int moneyPool;
-       boolean addMoney = true;
+    private int moneyPool;
+    boolean addMoney = true;
     public boolean addMoney(int money) {
 
 
@@ -27,6 +30,4 @@ public abstract class VendingMachineImpl implements VendingMachine {
         return false;
     }
 
-    }
-
-
+}
