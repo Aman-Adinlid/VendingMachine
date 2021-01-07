@@ -7,27 +7,38 @@ import Lexicon.se.model.Snack;
 
 public abstract class VendingMachineImpl implements VendingMachine{
 
-
-
-    int[] denominations = new int[]{1, 2, 5, 10, 20, 50, 100, 200, 500, 1000};
-    Product[] products = new Product[]{
-            new Drink("sevenUp", 20, " 150cl"),
-            new Food("Potato",50,200),
-            new Snack("popCorn",100,50),
-    };
+    int[] denominations;
+    Product[] products;
     private int moneyPool;
-    boolean addMoney = true;
+
+    private Product[] theProducts = new Product[0];
+
+    public VendingMachineImpl(Product[] products) {
+        this.products = products;
+    }
+
+    @Override
     public boolean addMoney(int money) {
-
-
-        for (int denomination : denominations) {
-            if (denomination == money) {
-                moneyPool = moneyPool + money;
-                return true;
-            }
-
-        }
         return false;
     }
 
+    @Override
+    public Product buy(int money, int prodNum) {
+        return null;
+    }
+
+    @Override
+    public int returnChange() {
+        return 0;
+    }
+
+    @Override
+    public void presentProducts() {
+
+    }
+
+    @Override
+    public int getBalance() {
+        return 0;
+    }
 }
