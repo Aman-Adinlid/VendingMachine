@@ -5,7 +5,7 @@ import Lexicon.se.model.Food;
 import Lexicon.se.model.Product;
 import Lexicon.se.model.Snack;
 
-public class VendingMachineImpl {
+public abstract class VendingMachineImpl implements VendingMachine{
 
 
 
