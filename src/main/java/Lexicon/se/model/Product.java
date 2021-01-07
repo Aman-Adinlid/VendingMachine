@@ -6,11 +6,16 @@ public abstract class Product {
         String name;
         int price;
 
-        public abstract String examine();
+    public Product(String name, int price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public abstract String examine();
 
         public abstract void use();
 
-        abstract Lexicon.se.model.Product purchase(int money);
+        abstract Product purchase(int money);
 
         public String getName() {
             return name;

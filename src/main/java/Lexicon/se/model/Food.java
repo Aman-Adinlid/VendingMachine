@@ -5,6 +5,11 @@ public class Food extends Product{
     int calories;
 
 
+    public Food(String name, int price, int calories) {
+        super(name, price);
+        this.calories = calories;
+    }
+
     @Override
     public String examine() {
         return null;

@@ -1,11 +1,32 @@
 package Lexicon.se.model;
 
+import Lexicon.se.VendingMachine;
 import Lexicon.se.model.Product;
 
-public class VendingMachineImpl {
+public abstract class VendingMachineImpl implements VendingMachine {
 
 
-    int[] denominations;
-    Product[] products;
-    int moneyPool;
-}
+    int[] denominations = new int[]{1, 2, 5, 10, 20, 50, 100, 200, 500, 1000};
+    Product[] products = new Product[]{
+            new Drink("sevenUp", 20, " 150cl"),
+            new Food("Potato",50,200),
+            new Snack("popCorn",100,50),
+    };
+       private int moneyPool;
+       boolean addMoney = true;
+    public boolean addMoney(int money) {
+
+
+        for (int denomination : denominations) {
+            if (denomination == money) {
+                moneyPool = moneyPool + money;
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    }
+
+
