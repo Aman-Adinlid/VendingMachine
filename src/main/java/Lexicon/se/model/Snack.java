@@ -27,7 +27,7 @@ public class Snack extends Product{
 
     @Override
     public void use() {
-        System.out.println("Enjoy");
+        System.out.println("Enjoy" + super.getName());
 
 
     }

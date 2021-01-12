@@ -25,7 +25,7 @@ public class Food extends Product{
 
     @Override
     public void use() {
-        System.out.println("Do you need more?");
+        System.out.println("Do you need more?" + super.getName());
 
     }
 

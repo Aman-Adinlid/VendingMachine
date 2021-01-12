@@ -27,7 +27,7 @@ public class Drink extends Product {
     @Override
     public void use() {
         // todo:  consume the product
-        System.out.println("What a refreshing " + getName() + " you had a drink");
+        System.out.println(" you had a drink" + super.getName());
 
 
     }
