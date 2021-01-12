@@ -3,7 +3,7 @@ package Lexicon.se.model;
 public class Drink extends Product {
 
 
-    String volume;
+    private String volume;
 
     public Drink(String name, int price, String volume) {
         super(name, price);
@@ -20,11 +20,15 @@ public class Drink extends Product {
 
     @Override
     public String examine() {
-        return null;
+        return getName() + " " + getVolume() + " " + getPrice();
+
     }
 
     @Override
     public void use() {
+        // todo:  consume the product
+        System.out.println("What a refreshing " + getName() + " you had a drink");
+
 
     }
 

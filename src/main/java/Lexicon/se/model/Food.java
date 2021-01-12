@@ -2,8 +2,15 @@ package Lexicon.se.model;
 
 public class Food extends Product{
 
-    int calories;
+  private int calories;
 
+    public int getCalories() {
+        return calories;
+
+    }
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
 
     public Food(String name, int price, int calories) {
         super(name, price);
@@ -12,11 +19,13 @@ public class Food extends Product{
 
     @Override
     public String examine() {
-        return null;
+        return getName() + " " + getCalories() + " " + getPrice();
+
     }
 
     @Override
     public void use() {
+        System.out.println("Do you need more?");
 
     }
 

@@ -2,21 +2,33 @@ package Lexicon.se.model;
 
 public class Snack extends Product{
 
-    int sugarPercent;
+   private int sugarPercent;
 
 
-    public Snack(String name, int price,int sugarPercent) {
+    public int getSugarPercent() {
+        return sugarPercent;
+    }
+
+    public void setSugarPercent(int sugarPercent) {
+        this.sugarPercent = sugarPercent;
+    }
+
+    public Snack(String name, int price, int sugarPercent) {
         super(name, price);
         this.sugarPercent = sugarPercent;
     }
 
     @Override
     public String examine() {
-        return null;
+
+        return getName() + " " + getSugarPercent() + " " + getPrice();
+
     }
 
     @Override
     public void use() {
+        System.out.println("Enjoy");
+
 
     }
 
