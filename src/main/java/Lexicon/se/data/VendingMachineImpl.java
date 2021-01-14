@@ -53,7 +53,7 @@ public class VendingMachineImpl implements VendingMachine {
     public Product request(int productNumber) {
         Product product = products[productNumber - 1];
         this.depositPool = this.depositPool - product.getPrice();
-        System.out.println("Buy a Product" + product.getName());
+        System.out.println("Buy the Product" + product.getName());
         return product;
     }
 
