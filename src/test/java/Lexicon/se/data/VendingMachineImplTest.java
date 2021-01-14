@@ -55,7 +55,7 @@ public class VendingMachineImplTest {
         String result = vendingMachine.getDescription(3);
         Assert.assertTrue(result.contains("50"));
         Assert.assertTrue(result.contains("SevenUp"));
-        Assert.assertTrue(result.contains("4.5"));
+        Assert.assertTrue(result.contains("big"));
 
     }
 
