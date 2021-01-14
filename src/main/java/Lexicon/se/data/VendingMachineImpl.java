@@ -12,7 +12,7 @@ public class VendingMachineImpl implements VendingMachine {
 
             new Food(1, "Potato", 10, 100),
             new Snack(2, "PopCorn", 20, 5),
-            new Drink(3, "SevenUp", 50, "4.5"),
+            new Drink(3, "SevenUp", 50, "big"),
 
     };
 

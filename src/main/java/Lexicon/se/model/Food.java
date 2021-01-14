@@ -20,14 +20,18 @@ public class Food extends Product{
 
     @Override
     public String examine() {
-        return getName() + " " + getCalories() + " " + getPrice();
-
+        String Information = getProductNumber()+ "  " + getName() + " " + getCalories() + " " + getPrice();
+        return Information;
     }
 
     @Override
-    public void use() {
-        System.out.println("Do you need more?" + super.getName());
-
+    public String use() {
+      String consume = "Do you need more?";
+      return consume;
     }
 
+    @Override
+    public int getProductNumber() {
+        return super.getProductNumber();
     }
+}

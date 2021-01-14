@@ -12,12 +12,10 @@ public abstract class Product {
         this.price = price;
     }
 
-    public static void resetALL() {
-    }
 
     public abstract String examine();
 
-    public abstract void use();
+    public abstract String use();
 
 
     public String getName() {

@@ -21,15 +21,21 @@ public class Snack extends Product{
     @Override
     public String examine() {
 
-        return getName() + " " + getSugarPercent() + " " + getPrice();
+        String Information =getProductNumber() + " " + getName() + " " + getSugarPercent() + " " + getPrice();
+        return Information;
 
     }
 
     @Override
-    public void use() {
-        System.out.println("Enjoy" + super.getName());
+    public String use() {
+     String consume = "Enjoy";
+     return consume;
 
 
     }
 
+    @Override
+    public int getProductNumber() {
+        return super.getProductNumber();
+    }
 }
