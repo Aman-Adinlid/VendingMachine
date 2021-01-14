@@ -12,16 +12,14 @@ public class DrinkTest {
     public void setup() {
         test = new Drink(3, "SevenUp", 50, "big");
     }
-    
+
     @Test
     public void Drink_Test() {
 
-Assert.assertEquals(3, test.getProductNumber());
-Assert.assertEquals("SevenUp",test.getName());
-        Assert.assertEquals(50,test.getPrice());
-        Assert.assertEquals("big",test.getVolume());
-
-
+        Assert.assertEquals(3, test.getProductNumber());
+        Assert.assertEquals("SevenUp", test.getName());
+        Assert.assertEquals(50, test.getPrice());
+        Assert.assertEquals("big", test.getVolume());
 
 
     }
