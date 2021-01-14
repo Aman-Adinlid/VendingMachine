@@ -59,8 +59,17 @@ public class VendingMachineImpl implements VendingMachine {
 
 
     @Override
-    public int endSession() {
-        return 0;
+    public int endSession () {
+        // check the balance
+        // rest deposit pool
+        // return
+        depositPool = 0;
+        if (getBalance() > 0){
+            return getBalance();
+        }
+
+        return depositPool;
+
     }
 
     @Override

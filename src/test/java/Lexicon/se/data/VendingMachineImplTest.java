@@ -42,12 +42,12 @@ public class VendingMachineImplTest {
 
     @Test
     public void endSession_Test() {
-
-        vendingMachine.setDepositPool(50);
-        int expected = 50;
+        // check zero balance
+        Assert.assertEquals( 0,vendingMachine.getBalance(), 0);
+        vendingMachine.addCurrency(50);
+        Assert.assertEquals( 50,vendingMachine.getBalance(), 0);
         vendingMachine.endSession();
-        Assert.assertEquals(vendingMachine.getDepositPool(), expected, 0);
-
+        Assert.assertEquals( 0,vendingMachine.getBalance(), 0);
     }
 
     @Test
