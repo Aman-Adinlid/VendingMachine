@@ -8,35 +8,55 @@ import Lexicon.se.model.Snack;
 public class VendingMachineImpl implements VendingMachine {
 
     private int[] denominations = new int[]{1, 5, 10, 20, 50, 100, 500, 1000};
-    private Product[] products;
-    private int money;
+    private static Product[] products = {
 
-    public VendingMachineImpl(Product[] products) {
-        this.products = products;
+            new Food(1, "Potato", 10, 100),
+            new Snack(2, "PopCorn", 20, 5),
+            new Drink(3, "SevenUp", 50, "4.5"),
+
+    };
+
+    private int moneyPool;
+    private int depositPool;
+
+    public int getMoneyPool() {
+        return moneyPool;
     }
 
-    public VendingMachineImpl() {
-
-        Product.resetALL();
-        products = new Product[3];
-        products[0] = new Food("Potato", 10, 100);
-        products[1] = new Snack("PopCorn", 20, 5);
-        products[2] = new Drink("SevenUp", 8, "4.5");
-
-
+    public void setMoneyPool(int moneyPool) {
+        this.moneyPool = moneyPool;
     }
 
+    public int getDepositPool() {
+        return depositPool;
+    }
 
+    public void setDepositPool(int depositPool) {
+        this.depositPool = depositPool;
+    }
 
     @Override
-    public boolean addCurrency(int amount) {
-      return false;
+    public void addCurrency(int amount) {
+
+        if (amount > 0) {
+            this.depositPool += amount;
+            System.out.println("Add to the deposit pool " + amount);
+
+        } else {
+            this.depositPool = 0;
+
+
+        }
     }
 
     @Override
     public Product request(int productNumber) {
-        return null;
+        Product product = products[productNumber - 1];
+        this.depositPool = this.depositPool - product.getPrice();
+        System.out.println("Buy a Product" + product.getName());
+        return product;
     }
+
 
     @Override
     public int endSession() {
@@ -45,16 +65,23 @@ public class VendingMachineImpl implements VendingMachine {
 
     @Override
     public String getDescription(int productNumber) {
-        return null;
+        System.out.println("View a product description");
+        return products[productNumber - 1].examine();
     }
 
     @Override
     public int getBalance() {
-        return 0;
+        return depositPool;
     }
 
     @Override
     public String[] getProducts() {
-        return new String[0];
+        String[] tempProducts = new String[products.length];
+        for (int i = 0; i < tempProducts.length; i++) {
+            tempProducts[i] = products[i].getProductNumber() + " " + products[i].getName();
+        }
+        return tempProducts;
     }
+
+
 }

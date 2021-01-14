@@ -5,8 +5,8 @@ public class Drink extends Product {
 
     private String volume;
 
-    public Drink(String name, int price, String volume) {
-        super(name, price);
+    public Drink(int productNumber, String name, int price, String volume) {
+        super(productNumber, name, price);
         this.volume = volume;
     }
 
@@ -32,8 +32,5 @@ public class Drink extends Product {
 
     }
 
-    @Override
-    Product purchase(int money) {
-        return null;
-    }
+
 }

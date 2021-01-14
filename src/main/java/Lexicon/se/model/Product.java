@@ -2,10 +2,12 @@ package Lexicon.se.model;
 
 public abstract class Product {
 
+    private final int productNumber;
     private String name;
     private int price;
 
-    public Product(String name, int price) {
+    public Product(int productNumber, String name, int price) {
+        this.productNumber = productNumber;
         this.name = name;
         this.price = price;
     }
@@ -16,10 +18,6 @@ public abstract class Product {
     public abstract String examine();
 
     public abstract void use();
-
-
-    abstract Product purchase(int money);
-
 
 
     public String getName() {
@@ -34,8 +32,13 @@ public abstract class Product {
         return price;
     }
 
+
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public int getProductNumber() {
+        return this.productNumber;
     }
 }
 

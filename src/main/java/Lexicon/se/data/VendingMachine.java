@@ -4,7 +4,7 @@ import Lexicon.se.model.Product;
 
 public interface VendingMachine {
 
-    public boolean addCurrency(int amount);
+    public void addCurrency(int amount);
 
     public Product request(int productNumber);
 

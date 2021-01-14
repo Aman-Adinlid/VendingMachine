@@ -12,8 +12,9 @@ public class Food extends Product{
         this.calories = calories;
     }
 
-    public Food(String name, int price, int calories) {
-        super(name, price);
+
+    public Food(int productNumber, String name, int price, int calories) {
+        super(productNumber, name, price);
         this.calories = calories;
     }
 
@@ -29,8 +30,4 @@ public class Food extends Product{
 
     }
 
-    @Override
-    Product purchase(int money) {
-        return null;
     }
-}

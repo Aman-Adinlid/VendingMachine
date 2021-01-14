@@ -13,8 +13,8 @@ public class Snack extends Product{
         this.sugarPercent = sugarPercent;
     }
 
-    public Snack(String name, int price, int sugarPercent) {
-        super(name, price);
+    public Snack(int productNumber, String name, int price, int sugarPercent) {
+        super(productNumber, name, price);
         this.sugarPercent = sugarPercent;
     }
 
@@ -32,8 +32,4 @@ public class Snack extends Product{
 
     }
 
-    @Override
-    Product purchase(int money) {
-        return null;
-    }
 }
