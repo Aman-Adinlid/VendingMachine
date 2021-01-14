@@ -33,47 +33,46 @@ public class VendingMachineImplTest {
 
         vendingMachine.setDepositPool(20);
         int expected = 0;
-        vendingMachine.request(2);
+        Product actual = vendingMachine.request(2);
+        Assert.assertEquals("PopCorn", actual.getName());
         Assert.assertEquals(expected, vendingMachine.getDepositPool());
 
 
     }
 
     @Test
-    public void endSession_Test(){
+    public void endSession_Test() {
 
         vendingMachine.setDepositPool(50);
         int expected = 50;
         vendingMachine.endSession();
-        Assert.assertEquals(vendingMachine.getDepositPool(),expected,0);
+        Assert.assertEquals(vendingMachine.getDepositPool(), expected, 0);
 
     }
 
-@Test
-    public void getDescription_Test(){
+    @Test
+    public void getDescription_Test() {
+        String result = vendingMachine.getDescription(3);
+        Assert.assertTrue(result.contains("50"));
+        Assert.assertTrue(result.contains("SevenUp"));
+        Assert.assertTrue(result.contains("4.5"));
 
+    }
 
-String result = vendingMachine.getDescription(3);
-    Assert.assertTrue(result.contains("50"));
-    Assert.assertTrue(result.contains("SevenUp"));
-    Assert.assertTrue(result.contains("4.5"));
-
-}
-
-@Test
-    public void getBalance_Test(){
+    @Test
+    public void getBalance_Test() {
 
         vendingMachine.setDepositPool(200);
         int expected = 200;
-        Assert.assertEquals(expected,vendingMachine.getBalance(),0);
-}
+        Assert.assertEquals(expected, vendingMachine.getBalance(), 0);
+    }
 
-@Test
-    public void getProduct_Test(){
+    @Test
+    public void getProduct_Test() {
 
-vendingMachine.getProducts();
+        vendingMachine.getProducts();
 
 
-}
+    }
 
 }
