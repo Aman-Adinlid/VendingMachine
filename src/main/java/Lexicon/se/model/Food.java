@@ -1,13 +1,14 @@
 package Lexicon.se.model;
 
-public class Food extends Product{
+public class Food extends Product {
 
-  private int calories;
+    private int calories;
 
     public int getCalories() {
         return calories;
 
     }
+
     public void setCalories(int calories) {
         this.calories = calories;
     }
@@ -20,14 +21,14 @@ public class Food extends Product{
 
     @Override
     public String examine() {
-        String Information = getProductNumber()+ "  " + getName() + " " + getCalories() + " " + getPrice();
+        String Information = getProductNumber() + "  " + getName() + " " + getCalories() + " " + getPrice();
         return Information;
     }
 
     @Override
     public String use() {
-      String consume = "Do you need more?";
-      return consume;
+        String consume = "Do you need more?";
+        return consume;
     }
 
     @Override

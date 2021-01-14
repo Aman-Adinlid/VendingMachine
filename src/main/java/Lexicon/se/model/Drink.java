@@ -20,15 +20,15 @@ public class Drink extends Product {
 
     @Override
     public String examine() {
-        String Information =getProductNumber()+ "  "+ getName() + " " + getVolume() + " " + getPrice();
+        String Information = getProductNumber() + "  " + getName() + " " + getVolume() + " " + getPrice();
         return Information;
 
     }
 
     @Override
     public String use() {
-       String consume = " you had a drink";
-       return consume;
+        String consume = " you had a drink";
+        return consume;
 
 
     }
