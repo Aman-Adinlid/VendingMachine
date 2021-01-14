@@ -43,16 +43,17 @@ public class VendingMachineImplTest {
     public void endSession_Test(){
 
         vendingMachine.setDepositPool(50);
-        int expected = 0;
-        vendingMachine.request(3);
-        Assert.assertEquals(expected,vendingMachine.getDepositPool());
+        int expected = 50;
+        vendingMachine.endSession();
+        Assert.assertEquals(vendingMachine.getDepositPool(),expected,0);
 
     }
 
 @Test
     public void getDescription_Test(){
 
-    String result = vendingMachine.getDescription(3);
+
+String result = vendingMachine.getDescription(3);
     Assert.assertTrue(result.contains("50"));
     Assert.assertTrue(result.contains("SevenUp"));
     Assert.assertTrue(result.contains("4.5"));
@@ -64,13 +65,13 @@ public class VendingMachineImplTest {
 
         vendingMachine.setDepositPool(200);
         int expected = 200;
-        Assert.assertEquals(expected,vendingMachine.getBalance(),3);
+        Assert.assertEquals(expected,vendingMachine.getBalance(),0);
 }
 
 @Test
     public void getProduct_Test(){
 
-        vendingMachine.getProducts();
+vendingMachine.getProducts();
 
 
 }
