@@ -14,6 +14,7 @@ public interface VendingMachine {
 
     public int getBalance();
 
-    public String[] getProducts();
+    public Product[] getProducts();
 
+    Product addProduct(Product product);
 }

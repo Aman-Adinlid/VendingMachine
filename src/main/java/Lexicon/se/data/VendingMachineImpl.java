@@ -5,6 +5,8 @@ import Lexicon.se.model.Food;
 import Lexicon.se.model.Product;
 import Lexicon.se.model.Snack;
 
+import java.util.Arrays;
+
 public class VendingMachineImpl implements VendingMachine {
 
     private int[] denominations = new int[]{1, 5, 10, 20, 50, 100, 500, 1000};
@@ -84,13 +86,18 @@ public class VendingMachineImpl implements VendingMachine {
     }
 
     @Override
-    public String[] getProducts() {
-        String[] tempProducts = new String[products.length];
-        for (int i = 0; i < tempProducts.length; i++) {
-            tempProducts[i] = products[i].getProductNumber() + " " + products[i].getName();
-        }
-        return tempProducts;
+    public Product[] getProducts() {
+       return products;
     }
 
+    @Override
+    public Product addProduct(Product product) {
 
+        Product [] newProductArray = Arrays.copyOf(products, products.length +1);
+        newProductArray[newProductArray.length -1] = product;
+        products = newProductArray;
+        return product;
+
+
+    }
 }
