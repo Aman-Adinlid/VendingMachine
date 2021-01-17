@@ -15,9 +15,9 @@ public class App {
 
         VendingMachineImpl vendingMachine = new VendingMachineImpl();
 
-        Product product1 = new Drink(3,"sevenUp",50,"big");
-        Product product2 = new Food(1,"Potato",20,100);
-        Product product3 = new Snack(2,"popCorn",10,5);
+        Product product1 = new Drink(3, "sevenUp", 50, "big");
+        Product product2 = new Food(1, "Potato", 20, 100);
+        Product product3 = new Snack(2, "popCorn", 10, 5);
 
         vendingMachine.addProduct(product1);
         vendingMachine.addProduct(product2);
@@ -50,12 +50,12 @@ public class App {
                     break;
                 case "3":
                     Product[] result = vendingMachine.getProducts();
-                     for (Product std : result) {
-                         System.out.println("_________________________________\n");
-                         System.out.println("productNum: " + std.getProductNumber());
-                         System.out.println("productName: " + std.getName());
-                         System.out.println("productPrice: " + std.getPrice());
-                     }
+                    for (Product std : result) {
+                        System.out.println("_________________________________\n");
+                        System.out.println("productNum: " + std.getProductNumber());
+                        System.out.println("productName: " + std.getName());
+                        System.out.println("productPrice: " + std.getPrice());
+                    }
                     break;
 
                 case "4":
@@ -66,14 +66,14 @@ public class App {
                     break;
 
                 case "5":
-               //buy the product
+                    //buy the product
                     System.out.println(" which product u want to buy?: ");
                     int buyProduct = sc.nextInt();
                     System.out.println(vendingMachine.request(buyProduct));
                     break;
 
                 case "6":
-              vendingMachine.endSession();
+                    vendingMachine.endSession();
                     break;
                 case "7":
                     System.exit(0);
@@ -81,12 +81,9 @@ public class App {
                     System.out.println("Operation is not valid");
 
 
-
-
-
             }
 
 
-            }
+        }
     }
 }
