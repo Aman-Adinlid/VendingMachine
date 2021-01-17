@@ -32,7 +32,7 @@ public class App {
             System.out.println("4. getDescription");
             System.out.println("5. buy the product");
             System.out.println("6. endSession");
-
+            System.out.println("7. exit");
             Scanner sc = new Scanner(System.in);
             System.out.println(" enter a valid operation number: ");
             String operationType = sc.nextLine();
@@ -49,6 +49,39 @@ public class App {
                     System.out.println("vendingMachine.getBalance()+ kr");
                     break;
                 case "3":
+                    Product[] result = vendingMachine.getProducts();
+                     for (Product std : result) {
+                         System.out.println("_________________________________\n");
+                         System.out.println("productNum: " + std.getProductNumber());
+                         System.out.println("productName: " + std.getName());
+                         System.out.println("productPrice: " + std.getPrice());
+                     }
+                    break;
+
+                case "4":
+                    //get description
+                    System.out.println("enter the product num: ");
+                    int ProductNum = sc.nextInt();
+                    System.out.println(vendingMachine.getDescription(ProductNum));
+                    break;
+
+                case "5":
+               //buy the product
+                    System.out.println(" which product u want to buy?: ");
+                    int buyProduct = sc.nextInt();
+                    System.out.println(vendingMachine.request(buyProduct));
+                    break;
+
+                case "6":
+              vendingMachine.endSession();
+                    break;
+                case "7":
+                    System.exit(0);
+                default:
+                    System.out.println("Operation is not valid");
+
+
+
 
 
             }
