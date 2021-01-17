@@ -49,7 +49,6 @@ public class App {
                     System.out.println("vendingMachine.getBalance()+ kr");
                     break;
                 case "3":
-                    Product[] result  = vendingMachine.getProducts();
 
 
             }
